@@ -1,30 +1,36 @@
-class_name Symbol extends Node2D
+class_name Symbol extends PathFollow2D
 
-enum SymbolState { IDLE, WIN, OFF }
-@onready var IdleSprite : Sprite2D = $IDLE
-@onready var WinAnimation : AnimatedSprite2D = $IDLE
-@onready var OffSprite : Sprite2D = $IDLE
+enum SymbolState { IDLE, PRIZE, OFF }
 
-var _current_state: SymbolState = SymbolState.IDLE 
+@onready var IdleSprite: Sprite2D = $IDLE
+@onready var PrizeAnimation: AnimatedSprite2D = $PRIZE
+@onready var OffSprite: Sprite2D = $OFF
+
+var _current_state: SymbolState = SymbolState.IDLE
+var resource : FigureTypeResource 
+
+func _ready():
+	IdleSprite.visible = true
+	PrizeAnimation.visible = false
+	OffSprite.visible = false
+	set_state(SymbolState.IDLE)
 
 func set_state(value: SymbolState) -> void:
 	_current_state = value
 	_update_state()
 
-func get_state()->SymbolState:
-	return _current_state
-	
-func setup(idle_texture: Texture2D, win_frames: SpriteFrames, off_texture: Texture2D) -> void:
-	IdleSprite.texture = idle_texture
-	WinAnimation.frames = win_frames
-	OffSprite.texture = off_texture
+func setup(resource: FigureTypeResource) -> void:
+	self.resource = resource
+	IdleSprite.texture = resource.idle_texture
+	PrizeAnimation.frames = resource.prize_animation
+	OffSprite.texture = resource.off_texture
 	set_state(SymbolState.IDLE)
 
 func _update_state() -> void:
 	IdleSprite.visible = (_current_state == SymbolState.IDLE)
-	WinAnimation.visible = (_current_state == SymbolState.WIN)
+	PrizeAnimation.visible = (_current_state == SymbolState.PRIZE)
 	OffSprite.visible = (_current_state == SymbolState.OFF)
 	
-	WinAnimation.stop()
-	if _current_state == SymbolState.WIN:
-		WinAnimation.play()
+	PrizeAnimation.stop()
+	if _current_state == SymbolState.PRIZE:
+		PrizeAnimation.play()

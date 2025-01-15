@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="FigureType" load_steps=3 format=3 uid="uid://djy5xobaqw67u"]
+
+[ext_resource type="Texture2D" uid="uid://7j665mo5wp8" path="res://Assets/Symbol/SYM_10_off.png" id="1_v5e6l"]
+[ext_resource type="Script" path="res://Resources/Figure/FigureTypeResource.gd" id="2_pcmiv"]
+
+[resource]
+script = ExtResource("2_pcmiv")
+symbol_type = 9
+idle_texture = ExtResource("1_v5e6l")
+off_texture = ExtResource("1_v5e6l")
