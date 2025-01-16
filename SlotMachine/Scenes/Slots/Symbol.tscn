@@ -1,6 +1,6 @@
 [gd_scene load_steps=47 format=3 uid="uid://bgbg42kqil6e5"]
 
-[ext_resource type="Script" path="res://Scripts/Symbol.gd" id="1_w6pg0"]
+[ext_resource type="Script" path="res://Scripts/Slots/Symbol.gd" id="1_w6pg0"]
 [ext_resource type="Texture2D" uid="uid://cp5yjm0mmt3kf" path="res://Assets/Symbol/SYM_05_off.png" id="3_21ba1"]
 [ext_resource type="Texture2D" uid="uid://dros0yw6ddnwe" path="res://Assets/Symbol/SYM_PRIZE_05.png" id="4_kb3in"]
 

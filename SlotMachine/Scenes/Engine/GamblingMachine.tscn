@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvolg14a5603"]
+
+[ext_resource type="Script" path="res://Scripts/Engine/GamblingMachineManager.gd" id="1_umkw7"]
+[ext_resource type="Script" path="res://Scripts/Engine/LoadingManager.gd" id="2_vhtb6"]
+
+[node name="GamblingMachine" type="Node2D"]
+script = ExtResource("1_umkw7")
+
+[node name="LoadingManager" type="Node2D" parent="."]
+script = ExtResource("2_vhtb6")
+
+[node name="PrimaryPool" type="Node2D" parent="LoadingManager"]
+
+[node name="GamesPool" type="Node2D" parent="LoadingManager"]

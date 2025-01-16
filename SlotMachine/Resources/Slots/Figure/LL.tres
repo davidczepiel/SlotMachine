@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="FigureType" load_steps=3 format=3 uid="uid://dom0arbaravge"]
 
 [ext_resource type="Texture2D" uid="uid://bhl7c863ry7to" path="res://Assets/Symbol/SYM_12_off.png" id="1_esuvc"]
-[ext_resource type="Script" path="res://Resources/Figure/FigureTypeResource.gd" id="2_q50jk"]
+[ext_resource type="Script" path="res://Resources/Slots/Figure/FigureTypeResource.gd" id="2_q50jk"]
 
 [resource]
 script = ExtResource("2_q50jk")

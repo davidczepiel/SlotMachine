@@ -13,3 +13,12 @@ config_version=5
 config/name="SlotMachine"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Globals="*res://Scripts/Engine/Globals.gd"
+
+[display]
+
+window/size/viewport_width=1366
+window/size/viewport_height=768
