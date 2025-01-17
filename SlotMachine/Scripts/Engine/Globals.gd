@@ -1,4 +1,4 @@
-
+extends Node
 enum MARKET { BAR, SALON, CASINO }
 
 var MachineManager: GamblingMachineManager = null

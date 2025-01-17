@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsd6go3w8g8gi"]
+
+[ext_resource type="Script" path="res://Scripts/Slots/SlotMainSceneManager.gd" id="1_kd0jw"]
+[ext_resource type="Script" path="res://Scripts/Slots/ReelsManager.gd" id="2_slyo6"]
+[ext_resource type="PackedScene" uid="uid://cu1kpaovlelt0" path="res://Scenes/Slots/Components/Reel.tscn" id="3_lfymn"]
+[ext_resource type="Texture2D" uid="uid://dtvv0drpfk47g" path="res://Assets/MainScene/BKG_mask.png" id="4_47nny"]
+
+[node name="SlotMainReelsScene" type="Node2D"]
+script = ExtResource("1_kd0jw")
+
+[node name="ReelsManager" type="Node2D" parent="." node_paths=PackedStringArray("reels")]
+position = Vector2(148, -58)
+script = ExtResource("2_slyo6")
+reels = [NodePath("Reel"), NodePath("Reel2"), NodePath("Reel3"), NodePath("Reel4"), NodePath("Reel5")]
+base_spin_symbols = 6
+
+[node name="Reel" parent="ReelsManager" instance=ExtResource("3_lfymn")]
+position = Vector2(145, 0)
+
+[node name="Reel2" parent="ReelsManager" instance=ExtResource("3_lfymn")]
+position = Vector2(346, 0)
+
+[node name="Reel3" parent="ReelsManager" instance=ExtResource("3_lfymn")]
+position = Vector2(546, 0)
+
+[node name="Reel4" parent="ReelsManager" instance=ExtResource("3_lfymn")]
+position = Vector2(746, 0)
+
+[node name="Reel5" parent="ReelsManager" instance=ExtResource("3_lfymn")]
+position = Vector2(946, 0)
+
+[node name="BKG_MASK" type="Sprite2D" parent="."]
+texture = ExtResource("4_47nny")
+centered = false
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 642.0
+offset_top = 642.0
+offset_right = 650.0
+offset_bottom = 650.0
+scale = Vector2(10, 10)
+
+[connection signal="reel_stopped" from="ReelsManager/Reel" to="ReelsManager" method="on_reel_stopped"]
+[connection signal="reel_stopped" from="ReelsManager/Reel2" to="ReelsManager" method="on_reel_stopped"]
+[connection signal="reel_stopped" from="ReelsManager/Reel3" to="ReelsManager" method="on_reel_stopped"]
+[connection signal="reel_stopped" from="ReelsManager/Reel4" to="ReelsManager" method="on_reel_stopped"]
+[connection signal="reel_stopped" from="ReelsManager/Reel5" to="ReelsManager" method="on_reel_stopped"]
+[connection signal="pressed" from="Control/Button" to="ReelsManager" method="start_spinning"]

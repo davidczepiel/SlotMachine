@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://n7ijp7ou0w82"]
+
+[ext_resource type="Script" path="res://Scripts/Common/GameManager.gd" id="1_d7x7t"]
+
+[node name="BaseSlotMachine" type="Node2D"]
+script = ExtResource("1_d7x7t")

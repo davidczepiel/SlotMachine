@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsd6go3w8g8gi"]
+
+[ext_resource type="Script" path="res://Scripts/Slots/SlotMainSceneManager.gd" id="1_kd0jw"]
+[ext_resource type="Script" path="res://Scripts/Slots/ReelsManager.gd" id="2_slyo6"]
+[ext_resource type="PackedScene" uid="uid://cu1kpaovlelt0" path="res://Scenes/Slots/Components/Reel.tscn" id="3_lfymn"]
+
+[node name="SlotMainReelsScene" type="Node2D"]
+script = ExtResource("1_kd0jw")
+
+[node name="ReelsManager" type="Node2D" parent="."]
+script = ExtResource("2_slyo6")
+
+[node name="Reel" parent="ReelsManager" instance=ExtResource("3_lfymn")]
+position = Vector2(600, 148)
+
+[node name="Reel2" parent="ReelsManager" instance=ExtResource("3_lfymn")]
+position = Vector2(750, 148)
+
+[node name="Reel3" parent="ReelsManager" instance=ExtResource("3_lfymn")]
+position = Vector2(900, 148)
