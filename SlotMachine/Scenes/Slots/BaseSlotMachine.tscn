@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://n7ijp7ou0w82"]
+[gd_scene load_steps=4 format=3 uid="uid://n7ijp7ou0w82"]
 
-[ext_resource type="Script" path="res://Scripts/Common/GameManager.gd" id="1_d7x7t"]
+[ext_resource type="Script" path="res://Scripts/Slots/SlotGameManager.gd" id="1_eygad"]
+[ext_resource type="PackedScene" uid="uid://bsd6go3w8g8gi" path="res://Scenes/Slots/BaseScenes/MainReelsScene.tscn" id="2_ri770"]
+[ext_resource type="Script" path="res://Scripts/Slots/SlotPlayManager.gd" id="3_b2kww"]
 
-[node name="BaseSlotMachine" type="Node2D"]
-script = ExtResource("1_d7x7t")
+[node name="BaseSlotMachine" type="Node2D" node_paths=PackedStringArray("play_manager")]
+script = ExtResource("1_eygad")
+game_scenes = Array[PackedScene]([ExtResource("2_ri770")])
+play_manager = NodePath("PlayManager")
+main_scene_name = "MainReelsScene"
+
+[node name="PlayManager" type="Node2D" parent="."]
+script = ExtResource("3_b2kww")

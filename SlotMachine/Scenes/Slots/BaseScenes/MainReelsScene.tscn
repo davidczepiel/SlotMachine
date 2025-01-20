@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://bsd6go3w8g8gi"]
 
 [ext_resource type="Script" path="res://Scripts/Slots/SlotMainSceneManager.gd" id="1_kd0jw"]
-[ext_resource type="Script" path="res://Scripts/Slots/ReelsManager.gd" id="2_slyo6"]
+[ext_resource type="Script" path="res://Scripts/Slots/ReelsGamblingGame.gd" id="2_slyo6"]
 [ext_resource type="PackedScene" uid="uid://cu1kpaovlelt0" path="res://Scenes/Slots/Components/Reel.tscn" id="3_lfymn"]
 [ext_resource type="Texture2D" uid="uid://dtvv0drpfk47g" path="res://Assets/MainScene/BKG_mask.png" id="4_47nny"]
 
-[node name="SlotMainReelsScene" type="Node2D"]
+[node name="SlotMainScene" type="Node2D"]
 script = ExtResource("1_kd0jw")
 
 [node name="ReelsManager" type="Node2D" parent="." node_paths=PackedStringArray("reels")]
@@ -52,4 +52,4 @@ scale = Vector2(10, 10)
 [connection signal="reel_stopped" from="ReelsManager/Reel3" to="ReelsManager" method="on_reel_stopped"]
 [connection signal="reel_stopped" from="ReelsManager/Reel4" to="ReelsManager" method="on_reel_stopped"]
 [connection signal="reel_stopped" from="ReelsManager/Reel5" to="ReelsManager" method="on_reel_stopped"]
-[connection signal="pressed" from="Control/Button" to="ReelsManager" method="start_spinning"]
+[connection signal="pressed" from="Control/Button" to="ReelsManager" method="start_game"]

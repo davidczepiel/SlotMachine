@@ -19,8 +19,8 @@ func set_state(value: SymbolState) -> void:
 	_current_state = value
 	_update_state()
 
-func setup(resource: FigureTypeResource) -> void:
-	self.resource = resource
+func setup(newResource : FigureTypeResource) -> void:
+	resource = newResource
 	IdleSprite.texture = resource.idle_texture
 	PrizeAnimation.frames = resource.prize_animation
 	OffSprite.texture = resource.off_texture

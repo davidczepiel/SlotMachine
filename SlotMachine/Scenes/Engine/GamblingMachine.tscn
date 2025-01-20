@@ -6,6 +6,14 @@
 [node name="GamblingMachine" type="Node2D"]
 script = ExtResource("1_umkw7")
 
+[node name="MachineConfigManager" type="Node2D" parent="."]
+
+[node name="SaveManager" type="Node2D" parent="."]
+
+[node name="HardwareManager" type="Node2D" parent="."]
+
+[node name="ServerManager" type="Node2D" parent="."]
+
 [node name="LoadingManager" type="Node2D" parent="."]
 script = ExtResource("2_vhtb6")
 
